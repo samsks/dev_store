@@ -1,0 +1,6 @@
+{
+  "trailingComma": "none",
+  "singleQuote": true,
+  "editor.tabSize": 2,
+  "semi": false
+}
