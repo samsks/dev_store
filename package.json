@@ -11,6 +11,7 @@
     "prettier": "prettier --check ."
   },
   "dependencies": {
+    "lucide-react": "^0.292.0",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18"
