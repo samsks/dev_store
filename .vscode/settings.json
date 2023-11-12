@@ -9,5 +9,10 @@
   },
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "cSpell.language": "en,pt-BR"
+  "cSpell.language": "en,pt-BR",
+  "cSpell.words": [
+    "devstore",
+    "dowhile",
+    "tailwindcss"
+  ]
 }
