@@ -5,7 +5,11 @@ import { api } from '@/data/api'
 import { iProducts } from '@/data/types/products'
 
 async function getFeaturedProducts(): Promise<iProducts[]> {
-  const res = await api('/products/featured')
+  const res = await api('/products/featured', {
+    next: {
+      revalidate: 10 * 60 // 10 minutes
+    }
+  })
 
   if (!res.ok) {
     throw new Error(`Error: ${res.status} ${res.statusText}`)
