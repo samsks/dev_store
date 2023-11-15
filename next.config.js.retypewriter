@@ -1,0 +1,13 @@
+reTypewriter Snapshots v1
+
+--01----------
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['github.com']
+  }
+}
+
+module.exports = nextConfig
+
+--------------
