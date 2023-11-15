@@ -6,10 +6,9 @@ import { iProducts } from '@/data/types/products'
 
 async function getFeaturedProducts(): Promise<iProducts[]> {
   const res = await api('/products/featured', {
-    cache: 'no-store' // for remove in production
-    // next: {
-    //   revalidate: 10 * 60 // 10 minutes
-    // }
+    next: {
+      revalidate: 10 * 60 // 10 minutes
+    }
   })
 
   if (!res.ok) {
