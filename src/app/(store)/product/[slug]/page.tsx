@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 import { api } from '@/data/api'
+import { iProducts } from '@/data/types/products'
 
 interface ProductPageProps {
   params: {
@@ -9,7 +10,7 @@ interface ProductPageProps {
   }
 }
 
-async function getProduct(slug: string) {
+async function getProduct(slug: string): Promise<iProducts> {
   const res = await api(`/products/${slug}`, {
     next: {
       revalidate: 5 * 60 // 5 minutes
@@ -27,6 +28,15 @@ export async function generateMetadata({
   return {
     title: product.title
   }
+}
+
+export async function generateStaticParams() {
+  const res = await api('/products/featured')
+  const products = await res.json()
+
+  return products.map((product: iProducts) => {
+    return { slug: product.slug }
+  })
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
