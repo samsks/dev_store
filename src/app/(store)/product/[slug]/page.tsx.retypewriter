@@ -1,3 +1,6 @@
+reTypewriter Snapshots v1
+
+--01----------
 import { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -5,6 +8,7 @@ import AddToCartButton from '@/components/add-to-cart-button'
 
 import { api } from '@/data/api'
 import { iProducts } from '@/data/types/products'
+// import { env } from '@/env'
 
 interface ProductPageProps {
   params: {
@@ -29,6 +33,7 @@ export async function generateMetadata({
 
   return {
     title: product.title
+    // metadataBase: new URL(env.APP_URL)
   }
 }
 
@@ -111,3 +116,5 @@ export default async function ProductPage({ params }: ProductPageProps) {
     </div>
   )
 }
+
+--------------
